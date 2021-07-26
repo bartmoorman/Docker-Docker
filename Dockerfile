@@ -1,7 +1,7 @@
 FROM docker:latest
 
-ARG TARGETOS=linux \
-    TARGETARCH=amd64 \
+ARG TARGETOS \
+    TARGETARCH \
     TARGETVARIANT
 
 RUN apk add --no-cache \
