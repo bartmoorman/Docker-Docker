@@ -10,7 +10,7 @@ RUN apk add --no-cache \
     git \
     jq \
     wget \
- && if [ ${TARGETTARIANT} ]; then target=${TARGETOS}-${TARGETARCH}-${TARGETVARIANT}; else target=${TARGETOS}-${TARGETARCH}; fi \
+ && if [ ${TARGETVARIANT} ]; then target=${TARGETOS}-${TARGETARCH}-${TARGETVARIANT}; else target=${TARGETOS}-${TARGETARCH}; fi \
  && fileUrl=$(curl --silent --location "https://api.github.com/repos/docker/buildx/releases/latest" | jq --arg target ${target} --raw-output '.assets[] | select(.name | endswith($target)) | .browser_download_url') \
  && wget --quiet --directory-prefix ~/.docker/cli-plugins "${fileUrl}" \
  && chmod a+x ~/.docker/cli-plugins/buildx-*.${target} \
