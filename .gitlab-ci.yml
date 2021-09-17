@@ -4,4 +4,4 @@ include:
     file: '.gitlab-ci-docker.yml'
 
 variables:
-  BUILDX_PLATFORM: linux/amd64,linux/arm64/v8
+  BUILDX_PLATFORM: 'linux/amd64,linux/arm64/v8'
